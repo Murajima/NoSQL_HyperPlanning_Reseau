@@ -1,0 +1,42 @@
+"Name": "traefik",
+    "TaskTemplate": {
+        "ContainerSpec": {
+            "Image": "traefik:v1.1.0",
+            "Args": [
+                "--defaultentrypoints=http,https",
+                "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https",
+                "--entryPoints=Name:https Address::443 TLS",
+                "--acme",
+                "--acme.entrypoint=https",
+                "--acme.email=guillaume.faucher@ynov.com",
+                "--acme.storage=/data/acme.json",
+                "--acme.ondemand=true",
+                "--docker",
+                "--docker.swarmmode",
+                "--docker.exposedbydefault=false",
+                "--docker.watch",
+                "--web",
+                "--logLevel=INFO"
+            ],
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "/var/run/docker.sock",
+                    "Target": "/var/run/docker.sock"
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/opt/traefik",
+                    "Target": "/data"
+                }
+            ]
+        },
+        "RestartPolicy": {
+            "Condition": "any",
+            "MaxAttempts": 0
+        },
+        "Placement": {
+            "Constraints": [
+                "node.role==manager"
+            ]
+        }
