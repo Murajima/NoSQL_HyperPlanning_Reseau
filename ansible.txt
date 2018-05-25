@@ -1,0 +1,2 @@
+* donner a ansible le sudo sur l'user ubuntu 
+ansible-playbook  -u ubuntu  -K  -i  hosts site.yml
