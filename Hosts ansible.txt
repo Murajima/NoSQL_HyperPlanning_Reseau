@@ -1,0 +1,12 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+34.215.167.95 Worker1.localdomain
+34.215.167.95 Manager.localdomain
+35.160.38.143 Worker3.localdomain
+52.10.124.112 Worker2.localdomain
+34.217.212.108 Mongodb1.localdomain
+34.215.81.79    Mongodb2.localdomain
+18.236.139.125  Mongodb3.localdomain
+
+
+
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
