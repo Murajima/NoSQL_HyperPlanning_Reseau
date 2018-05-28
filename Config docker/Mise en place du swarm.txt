@@ -1,0 +1,19 @@
+- Mise en place du swarm  
+
+# Initialize a swarm 
+C:\> docker swarm init --advertise-addr=18.236.173.59 --listen-addr 18.236.173.59:2377
+
+
+C:\> docker swarm join --token <WORKERJOINTOKEN> 18.236.173.59
+
+
+
+Afin de rendre reachable les Worker :
+
+Permettre au worker de prendre la place du Manager lors d'une panne
+
+Docker node promote Worker 1
+Docker node promote Worker 2
+Docker node promote Worker 3
+
+
