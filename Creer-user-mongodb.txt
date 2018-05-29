@@ -1,0 +1,18 @@
+> use admin
+switched to db admin
+> db.createUser(
+... {
+... user: "siteUserAdmin",
+... pwd: "unPasswordQuiVaBien",
+... roles: [{role: "userAdminAnyDatabase", db: "admin"}]
+... }
+... )
+Successfully added user: {
+    "user" : "siteUserAdmin",
+    "roles" : [
+        {
+        "role" : "userAdminAnyDatabase",
+        "db" : "admin"
+        }
+    ]
+}
